@@ -5,16 +5,16 @@ using UnityEngine;
 
 public class Dresses : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> dresses;
-    [SerializeField] private GameObject dress;
-    [SerializeField] private Transform pos;
+    [SerializeField] private List<Dress> dresses;
 
-    private void Start()
+    public void CloseDresses()
     {
-        Instantiate(dress, pos);
-        Instantiate(dress, pos);
-        Instantiate(dress, pos);
-        Instantiate(dress, pos);
-        Instantiate(dress, pos);
+        for (int i = 0; i < dresses.Count; i++)
+        {
+            dresses[i].CloseDress();
+            dresses[i]._anOpenElement2.openElement.Clear();
+            dresses[i]._anOpenElement2.DeleteArray();
+        }
     }
+    
 }

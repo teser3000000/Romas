@@ -19,4 +19,11 @@ public class AnOpenElement : MonoBehaviour
             Instantiate(openElement[i].gameObject, pos);
         }
     }
+    
+    public void DeleteArray()
+    {
+        while (transform.childCount > 0) {
+            DestroyImmediate(transform.GetChild(0).gameObject);
+        }
+    }
 }

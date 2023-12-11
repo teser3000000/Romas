@@ -23,20 +23,7 @@ public class User : MonoBehaviour
     }
     
     [SerializeField] private bool _isAuthorized;
-
-    private void FixedUpdate()
-    {
-        /*int quality = basket.Count;
-        if (quality == 1)
-        {
-            numberItemsInBasket.text = "1";
-        }
-        else
-        {
-            numberItemsInBasket.text = (basket.Count).ToString();
-        }*/
-    }
-
+    
     public void AddInBasketArray(GameObject obj)
     {
         basket.Add(obj);

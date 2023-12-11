@@ -1389,20 +1389,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3acb0ad2aaeb3764a87d1e4bdd595161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameDress: {fileID: 4346760638995124660}
-  priceDress: {fileID: 8137614650264263384}
   buttonAddToCart: {fileID: 5792264852531167388}
   buttonMakingAnOrder: {fileID: 3609576379209963118}
-  buttonPrim: {fileID: 0}
   formRegister: {fileID: 0}
   formDecoration: {fileID: 0}
   openingAnElement: {fileID: 4486996683479811266}
-  versionOne: {fileID: 0}
+  versionOne: {fileID: 6057451911514085174}
+  versionSecond: {fileID: 4486996683479811266}
   user: {fileID: 0}
   basket: {fileID: 0}
   _anOpenElement: {fileID: 0}
-  price: 0
-  name: adad
+  _anOpenElement2: {fileID: 0}
 --- !u!1 &4007925454293678133
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,33 +7,22 @@ using UnityEngine.UI;
 
 public class Dress : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI nameDress;
-    [SerializeField] private TextMeshProUGUI priceDress;
-    
     [SerializeField] private GameObject buttonAddToCart;
     [SerializeField] private GameObject buttonMakingAnOrder;
-    [SerializeField] private GameObject buttonPrim;
 
     [SerializeField] private GameObject formRegister;
     [SerializeField] private GameObject formDecoration;
     [SerializeField] private GameObject openingAnElement;
     [SerializeField] private GameObject versionOne;
+    [SerializeField] private GameObject versionSecond;
 
     [SerializeField] private User user;
     [SerializeField] private Basket basket;
-    [SerializeField] private AnOpenElement _anOpenElement;
+    [SerializeField] public AnOpenElement _anOpenElement;
+    [SerializeField] public AnOpenElement _anOpenElement2;
 
-    [SerializeField] private float price;
-    [SerializeField] private string name;
-    
     private int _value = 0;
     private bool _inBasket;
-
-    private void Start()
-    {
-        /*nameDress.text = name;
-        priceDress.text = price.ToString();*/
-    }
 
     public void AddInBasket()
     {
@@ -77,8 +66,8 @@ public class Dress : MonoBehaviour
     public void FormDecorationOpen()
     {
         _anOpenElement.openElement.Clear();
-        openingAnElement.SetActive(true);
         versionOne.SetActive(false);
+        versionSecond.SetActive(true);
         _anOpenElement.openElement.Add(gameObject);
         formDecoration.SetActive(true);
     }
@@ -88,8 +77,33 @@ public class Dress : MonoBehaviour
         openingAnElement.SetActive(true);
     }
 
+    public void FormDecorationOpenInMenu()
+    {
+        _anOpenElement2.openElement.Add(gameObject);
+        _anOpenElement2.openElement[0].GetComponent<Dress>().OpenVersion();
+        openingAnElement.SetActive(true);
+
+        _anOpenElement2.OutputToTheScreen();
+        /*versionOne.SetActive(true);
+        versionSecond.SetActive(false);*/
+    }
+    
     public void CloseDress()
     {
+        //_anOpenElement2.openElement.Clear();
+//        _anOpenElement2.DeleteArray();
+        CloseVersion();
         openingAnElement.SetActive(false);
+    }
+
+    private void CloseVersion()
+    {
+        versionOne.SetActive(true);
+        versionSecond.SetActive(false);
+    }
+    private void OpenVersion()
+    {
+        versionOne.SetActive(false);
+        versionSecond.SetActive(true);
     }
 }
