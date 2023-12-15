@@ -48,14 +48,7 @@ public class Dress : MonoBehaviour
 
     public void FormPrimOpen()
     {
-        if (!user.IsAuthorized)
-        {
-            FormRegisterOpen();
-        }
-        else
-        {
-            FormDecorationOpen();
-        }
+        FormDecorationOpen();
     }
     
     public void FormRegisterOpen()
@@ -69,6 +62,7 @@ public class Dress : MonoBehaviour
         versionOne.SetActive(false);
         versionSecond.SetActive(true);
         _anOpenElement.openElement.Add(gameObject);
+        _anOpenElement.OutputToTheScreen();
         formDecoration.SetActive(true);
     }
 

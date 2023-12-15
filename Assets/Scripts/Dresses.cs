@@ -6,6 +6,7 @@ using UnityEngine;
 public class Dresses : MonoBehaviour
 {
     [SerializeField] private List<Dress> dresses;
+    [SerializeField] private AnOpenElement _openElement;
 
     public void CloseDresses()
     {
@@ -15,6 +16,11 @@ public class Dresses : MonoBehaviour
             dresses[i]._anOpenElement2.openElement.Clear();
             dresses[i]._anOpenElement2.DeleteArray();
         }
+    }
+
+    public void DeleteContainer()
+    {
+        _openElement.DeleteArray();
     }
     
 }

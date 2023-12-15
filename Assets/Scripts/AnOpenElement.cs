@@ -17,11 +17,13 @@ public class AnOpenElement : MonoBehaviour
         for (int i = 0; i < openElement.Count; i++)
         {
             Instantiate(openElement[i].gameObject, pos);
+            Debug.Log(1);
         }
     }
     
     public void DeleteArray()
     {
+        openElement.Clear();
         while (transform.childCount > 0) {
             DestroyImmediate(transform.GetChild(0).gameObject);
         }
