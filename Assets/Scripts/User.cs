@@ -8,12 +8,7 @@ using UnityEngine.UI;
 public class User : MonoBehaviour
 {
     [SerializeField] public List<GameObject> basket;
-    [SerializeField] private TextMeshProUGUI numberItemsInBasket;
-
-    [SerializeField] public Text phoneNumber;
-    [SerializeField] public Text userName;
-
-    [SerializeField] public GameObject warning;
+    [SerializeField] public List<Dress> basketDreesArray;   
     [SerializeField] public GameObject formRegister;
 
     public bool IsAuthorized
@@ -29,7 +24,17 @@ public class User : MonoBehaviour
         basket.Add(obj);
     }
 
-    public void Registration()
+    public void CloseElementArrayInBasket()
+    {
+        for (int i = 0; i < basket.Count; i++)
+        {
+            /*if (basket[i].GetComponent<Dress>().linkOnPrefab != null) */
+                basket[i].GetComponent<Dress>().CloseBasketElement();
+            Debug.Log(12222);
+        }
+    }
+    
+    /*public void Registration()
     {
         if (phoneNumber.text != "" && userName.text != "")
         {
@@ -40,5 +45,5 @@ public class User : MonoBehaviour
         {
             warning.SetActive(true);
         }
-    }
+    }*/
 }

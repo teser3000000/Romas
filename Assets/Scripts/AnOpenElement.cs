@@ -16,8 +16,9 @@ public class AnOpenElement : MonoBehaviour
     {
         for (int i = 0; i < openElement.Count; i++)
         {
-            Instantiate(openElement[i].gameObject, pos);
-            Debug.Log(1);
+            GameObject obj = Instantiate(openElement[i].gameObject, pos);
+            /*obj.GetComponent<Dress>().versionOne.SetActive(true);
+            obj.GetComponent<Dress>().versionSecond.SetActive(false);*/
         }
     }
     

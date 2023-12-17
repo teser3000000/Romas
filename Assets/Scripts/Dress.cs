@@ -13,8 +13,10 @@ public class Dress : MonoBehaviour
     [SerializeField] private GameObject formRegister;
     [SerializeField] private GameObject formDecoration;
     [SerializeField] private GameObject openingAnElement;
-    [SerializeField] private GameObject versionOne;
-    [SerializeField] private GameObject versionSecond;
+    [SerializeField] public GameObject versionOne;
+    [SerializeField] public GameObject versionSecond;
+
+    [SerializeField] public GameObject linkOnPrefab;
 
     [SerializeField] private User user;
     [SerializeField] private Basket basket;
@@ -84,13 +86,14 @@ public class Dress : MonoBehaviour
     
     public void CloseDress()
     {
+        
         //_anOpenElement2.openElement.Clear();
 //        _anOpenElement2.DeleteArray();
         CloseVersion();
         openingAnElement.SetActive(false);
     }
-
-    private void CloseVersion()
+    
+    public void CloseVersion()
     {
         versionOne.SetActive(true);
         versionSecond.SetActive(false);
@@ -99,5 +102,11 @@ public class Dress : MonoBehaviour
     {
         versionOne.SetActive(false);
         versionSecond.SetActive(true);
+    }
+    
+    public void CloseBasketElement()
+    {
+        linkOnPrefab.GetComponent<Dress>().versionOne.SetActive(true);
+        linkOnPrefab.GetComponent<Dress>().versionSecond.SetActive(false);
     }
 }

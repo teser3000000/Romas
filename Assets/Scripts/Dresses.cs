@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class Dresses : MonoBehaviour
 {
-    [SerializeField] private List<Dress> dresses;
+    [SerializeField] public List<Dress> dresses;
     [SerializeField] private AnOpenElement _openElement;
+        
 
     public void CloseDresses()
     {
@@ -22,5 +23,7 @@ public class Dresses : MonoBehaviour
     {
         _openElement.DeleteArray();
     }
+    
+    
     
 }

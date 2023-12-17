@@ -19,7 +19,7 @@ public class Basket : MonoBehaviour
         var basketUser= user.basket;
         for (int i = 0; i < basketUser.Count; i++)
         {
-            Instantiate(basketUser[i].gameObject, pos);
+            basketUser[i].gameObject.GetComponent<Dress>().linkOnPrefab = Instantiate(basketUser[i].gameObject, pos);
         }
     }
 
@@ -29,4 +29,6 @@ public class Basket : MonoBehaviour
             DestroyImmediate(transform.GetChild(0).gameObject);
         }
     }
+    
+    
 }
